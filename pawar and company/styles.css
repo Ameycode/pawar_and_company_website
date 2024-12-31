@@ -1,0 +1,485 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f4f8;
+}
+
+/* Header Styles */
+header {
+    background-color: #1d4369; /* Navy blue */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo img {
+    width: 150px;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 50px;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 40px;
+}
+
+header h3 {
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #b8d8ba; /* Light green */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 25px;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #b8d8ba; /* Light green */
+    border-radius: 5px;
+}
+
+/* Marquee Styles */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #79d77f; /* Light green */
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.marquee span {
+    display: inline-block;
+    padding-right: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.slider img {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.slider img.active {
+    display: block;
+}
+
+/* General styling for the services section */
+.services {
+    text-align: left; /* Align text to the left */
+    font-family: Arial, sans-serif; /* Set a clean and readable font */
+}
+
+/* Styling for the unordered list */
+.services ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Styling for each list item */
+.services ul li {
+    margin-bottom: 20px; /* Add spacing between list items */
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-start; /* Align arrow and text properly */
+}
+
+/* Custom arrow before each list item */
+.services ul li::before {
+    content: "➤"; /* Arrow symbol */
+    margin-right: 10px; /* Space between arrow and text */
+    color: #0b4786; /* Customize arrow color */
+    font-size: 1.5em; /* Adjust arrow size */
+    line-height: 1; /* Align arrow vertically with text */
+}
+
+/* Styling for headings inside list items */
+.services ul li h4 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Set a slightly larger font size */
+    font-weight: bold; /* Make headings bold */
+    color: #0b4786; /* Match the arrow color for consistency */
+}
+
+/* Styling for paragraphs inside list items */
+.services ul li p {
+    margin: 5px 0 0 0; /* Add a small margin at the top */
+    font-size: 1em; /* Set font size */
+    text-align: justify; /* Justify the text for better readability */
+    color: #333; /* Set a neutral text color */
+    line-height: 1.6; /* Increase line height for better readability */
+    flex: 1; /* Allow the text to take up remaining space */
+}
+
+/* Styling for the paragraph after the list */
+.services + p {
+    text-align: justify; /* Justify the text */
+    font-size: 1em; /* Match the font size of list paragraphs */
+    color: #333; /* Set a neutral text color */
+    line-height: 1.6; /* Increase line height for better readability */
+    margin-top: 20px; /* Add space above the paragraph */
+}
+
+/* Services */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    border: 2px solid #003366; /* Navy blue border */
+    padding: 20px;
+    background-color: #a6bdd3; /* Light green */
+    text-align: center;
+    font-size: 25px;
+    transition: transform 0.10s;
+}
+
+.service-card:hover {
+    transform: scale(1.2);
+}
+
+.service-card a {
+    color: #fff; /* Change the text color to white */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Gallery Section */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 640px;
+}
+
+video {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Company Info Section */
+.company-info {
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 160px;
+    text-align: center;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.contact-btn {
+    background-color: #3f567a; /* Light blue color */
+    color: white; /* Text color white */
+    padding: 15px 30px; /* Increased size */
+    border: none;
+    border-radius: 8px; /* Slightly rounded corners */
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.contact-btn:hover {
+    background-color: #34b4e7; /* Slightly darker light blue on hover */
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Position above the button */
+    left: 50%;
+    margin-left: -100px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* Footer Styles */
+.visitor-count {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.count-label {
+    color: #003366;
+}
+
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer svg {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer svg:hover {
+    color: #b8d8ba;
+    transform: scale(1.1);
+}
+
+footer p {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer .developer-info {
+    font-size: 20px;
+    color: #b0b0b0; /* Light gray color for developer credit */
+    margin-top: 10px;
+    font-style: italic;
+}
+
+footer .developer-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer .developer-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* General Icon Styling */
+a svg {
+    width: 60px; /* Increased size for higher visibility */
+    height: 60px;
+    fill: #003366; /* Default dark navy for CA-inspired look */
+    transition: transform 0.3s, fill 0.3s, background-color 0.3s;
+    border-radius: 50%; /* Circular background */
+    padding: 15px; /* Increased padding for better spacing */
+    background-color: #f5f5f5; /* Light background to contrast icon */
+    display: inline-block;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for more emphasis */
+}
+
+/* Hover Effects */
+a svg:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background-color: #003366; /* Dark background on hover */
+    fill: #ffffff; /* White icon color on hover */
+}
+
+/* Specific Icon Color Changes */
+a[href*="instagram.com"] svg {
+    fill: #E4405F; /* Instagram brand color */
+}
+
+a[href*="facebook.com"] svg {
+    fill: #1877F2; /* Facebook brand color */
+}
+
+a[href*="mailto:"] svg {
+    fill: #976868; /* Default email icon color */
+}
+
+a[href*="wa.me"] svg {
+    fill: #25D366; /* WhatsApp brand color */
+}
+
+/* Hover Effect - Specific Icon Colors */
+a[href*="instagram.com"]:hover svg {
+    fill: #c13584; /* Lighter pink for Instagram on hover */
+}
+
+a[href*="facebook.com"]:hover svg {
+    fill: #4267B2; /* Darker blue for Facebook on hover */
+}
+
+a[href*="mailto:"]:hover svg {
+    fill: #555; /* Slightly lighter gray for email on hover */
+}
+
+a[href*="wa.me"]:hover svg {
+    fill: #128C7E; /* Darker green for WhatsApp on hover */
+}
+
